@@ -10,4 +10,7 @@ node {
         git branch: 'main', credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
 
     }
+    stage('clean up workspace'){
+        cleanWs()
+    }
 }
