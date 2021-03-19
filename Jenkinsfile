@@ -2,7 +2,7 @@ node {
     
 
     stage('checkout scm') {
-        ${GIT_BRANCH}
-        
+        git branch: 'main', credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
+
     }
 }
