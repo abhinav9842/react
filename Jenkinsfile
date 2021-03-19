@@ -1,4 +1,6 @@
-properties([pipelineTriggers([githubPush()])], buildDiscarder(logRotator(numToKeepStr: '3')))
+properties([
+    pipelineTriggers([githubPush()]), buildDiscarder(logRotator(numToKeepStr: '3'))
+])
 
 node {
     
