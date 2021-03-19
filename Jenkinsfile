@@ -14,7 +14,7 @@ node {
         sh 'docker build -t node-dev -f Dockerfile.dev .' 
     }
     stage('node test'){
-       sh 'docker run node-dev npm test'
+       sh 'docker run -e CI=true node-dev npm test'
     }
     stage('clean up workspace'){
         cleanWs()
