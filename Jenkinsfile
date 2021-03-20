@@ -19,6 +19,6 @@ node {
     }
     stage('clean up workspace'){
         cleanWs()
-        sh 'docker image rm node-dev'
+        sh 'docker image rm -f node-dev'
     }
 }
