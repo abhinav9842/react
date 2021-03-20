@@ -9,7 +9,7 @@ node {
         echo 'checking out repo'
         git branch: 'main', credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-        echo env.getEnvironment()
+        echo sh(returnStdout: true, script: 'env')
     }
     stage('build dev'){
         sh 'docker build -t node-dev -f Dockerfile.dev .' 
