@@ -7,10 +7,9 @@ node {
 
     stage('checkout scm') {
         echo 'checking out repo'
-        if(${env.BRANCH_NAME} == "main"){
         git branch: 'main', credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-        }
+        echo "$GIT_BRANCH"
     }
     stage('build dev'){
         sh 'docker build -t node-dev -f Dockerfile.dev .' 
