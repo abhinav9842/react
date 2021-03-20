@@ -7,8 +7,8 @@ node {
 
     stage('checkout scm') {
         echo 'checking out repo'
-        if(${env.GIT_BRANCH} == "main"){
-        git branch: ${env.GIT_BRANCH}, credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
+        if($GIT_BRANCH == "main"){
+        git branch: $GIT_BRANCH, credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         }
     }
