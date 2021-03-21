@@ -6,6 +6,7 @@ node {
     
 
     stage('checkout scm') {
+        echo "hellosdt123"
         if(env.BRANCH_NAME == 'main'){
         echo 'checking out repo'
         git branch: 'main', credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
