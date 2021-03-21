@@ -6,7 +6,7 @@ node {
     
 
     stage('checkout scm') {
-         when (env.BRANCH_NAME != 'master'){
+        if(env.BRANCH_NAME == 'main'){
         echo 'checking out repo'
         git branch: 'main', credentialsId: 'git-id', url: 'https://github.com/abhinav9842/react'
         echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
